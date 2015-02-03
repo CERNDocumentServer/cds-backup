@@ -1,19 +1,35 @@
-# cds-backup
+# CDS Backup
 Static backup site for CDS in case of maintenance and/or unexpected downtime.
 
-## Instalation
-```bash
-# Inside the project
-npm install;
-brew install;
-grunt build;
+## Install
+
+```console
+$ git clone https://github.com/CERNDocumentServer/cds-backup.git
+$ cd cds-backup
+$ npm install
+$ brower install
+$ grunt build
 ```
-The files are under `dist` directory.
 
-### For development
-
+### Development
 The sources are under `app` directory.
 
-```bash
-grunt serve;
+```console
+$ grunt serve
+```
+
+## Branches
+* ``master`` - Default development branch.
+* ``qa`` - Quality assurance branch, deployed to our QA cluster.
+* ``production`` - Production branch, deployed to our production cluster.
+
+## Deployment
+```console
+$ ssh <build host>
+$ workon cds
+$ cdvirtualenv scripts/
+$ fab backup_bootstrap
+$ fab backup_update
+$ fab backup_build
+$ fab backup_deploy
 ```
