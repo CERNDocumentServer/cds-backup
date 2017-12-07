@@ -7,7 +7,6 @@ Static backup site for CDS in case of maintenance and/or unexpected downtime.
 $ git clone https://github.com/CERNDocumentServer/cds-backup.git
 $ cd cds-backup
 $ npm install
-$ brower install
 $ grunt build
 ```
 

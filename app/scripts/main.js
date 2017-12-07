@@ -11,7 +11,6 @@ $(document).ready(function(){
     }
   ];
   var random = Math.floor((Math.random() * available.length) + 1);
-  console.log(available[random-1]);
   var selected = available[random-1];
   $.backstretch("/images/"+selected.image);
   $('.cds-image-caption').find('.text').first().text(selected.title);
