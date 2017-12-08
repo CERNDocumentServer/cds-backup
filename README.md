@@ -27,6 +27,5 @@ $ workon cds
 $ cdvirtualenv scripts/
 $ fab backup_bootstrap
 $ fab backup_update
-$ fab backup_build
 $ fab backup_deploy
 ```
