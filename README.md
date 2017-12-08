@@ -6,15 +6,13 @@ Static backup site for CDS in case of maintenance and/or unexpected downtime.
 ```console
 $ git clone https://github.com/CERNDocumentServer/cds-backup.git
 $ cd cds-backup
-$ npm install
-$ grunt build
 ```
 
 ### Development
-The sources are under `app` directory.
 
+Run a simple webserver to show the website with autoreload on modifications:
 ```console
-$ grunt serve
+$ grunt
 ```
 
 ## Branches
