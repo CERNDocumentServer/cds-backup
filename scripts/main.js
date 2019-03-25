@@ -2,12 +2,12 @@ $(document).ready(function(){
 
   var available = [
     {
-      "image": "73-11-155.jpg",
-      "title": "Ambulance after crash"
+      "image": "1008264_01.jpg",
+      "title": "Computer centre LEDs"
     },
     {
-      "image": "64-4-013.jpg",
-      "title": "Cleaning operation during the Synchro-Cyclotron (SC) shut-down"
+      "image": "1008294_05.jpg",
+      "title": "Computer centre exihibition"
     }
   ];
   var random = Math.floor((Math.random() * available.length) + 1);
