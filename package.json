@@ -2,8 +2,8 @@
   "name": "cds-backup",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-express": "~1.4.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-express": "~1.4.1",
     "grunt-open": "~0.2.3"
   },
   "engines": {
