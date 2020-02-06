@@ -11,9 +11,16 @@ cd cds-backup
 
 ## Development
 
+In case you don't have `grunt-cli` installed globally:
+
+```console
+npm install -g grunt-cli
+```
+
 Run a simple webserver to show the website with autoreload on modifications:
 
 ```console
+npm install
 grunt
 ```
 
