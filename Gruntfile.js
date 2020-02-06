@@ -1,36 +1,28 @@
-'use strict';
+"use strict";
 
-module.exports = function (grunt) {
-
+module.exports = function(grunt) {
   grunt.initConfig({
     watch: {
       options: {
-        livereload: true,
+        livereload: true
       },
       all: {
-        files: ['scripts/{,*/}*.js', 'styles/{,*/}*.css', 'index.html']
+        files: ["scripts/{,*/}*.js", "styles/{,*/}*.css", "index.html"]
       }
     },
-    express: {
-      all: {
+    connect: {
+      server: {
         options: {
-            bases: ['.'],
-            port: 9000,
-            hostname: "localhost",
-            livereload: true
+          port: 9000,
+          open: true,
+          livereload: true
         }
-      }
-    },
-    open: {
-      all: {
-          path: 'http://localhost:9000/'
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-express');
-  grunt.loadNpmTasks('grunt-open');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-connect");
 
-  grunt.registerTask('default', ['express', 'open', 'watch']);
+  grunt.registerTask("default", ["connect", "watch"]);
 };

@@ -1,21 +1,8 @@
-/* @override
-	http://localhost:9000/styles/main.css
-	http://0.0.0.0:9000/styles/main.css */
-/* Space out content a bit */
-
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  height: 100% !important;
-  position: relative;
-  min-height: 100%;
   font-family: "PT Sans", "Trebuchet MS", Arial, sans-serif;
   background-color: #000;
   background-size: cover;
+  color: #eee;
 }
 
 /* NOTE: a class for each of the images we want as a random background */
@@ -40,46 +27,36 @@ body {
 }
 
 .cds-logo {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
   margin-bottom: 5%;
   text-shadow: 2px 2px 10px #000;
 }
 
 .cds-logo h1 {
-  color: #fff;
   font-weight: bold;
 }
 
-.cds-excuse h2,
-.cds-excuse p {
-  color: #fff;
+.cds-message p {
   text-align: center;
   text-shadow: 1px 1px 5px #000;
 }
 
-.cds-excuse p.lead {
+.cds-message p.lead {
   margin-bottom: 0;
 }
 
 .cds-button-group {
   text-align: center;
-  margin: 5% 0 10% 0;
-}
-
-.backstretch img {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  margin: 20px 0 10% 0;
 }
 
 .cds-button-group a {
-  border: 1px solid #fff;
+  border: 1px solid #eee;
   border-radius: 0;
-  color: #fff;
-  padding-left: 100px;
-  padding-right: 100px;
+  color: #eee;
+  padding-left: 70px;
+  padding-right: 70px;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
   text-shadow: 2px 2px 10px #000;
@@ -88,17 +65,20 @@ body {
 .cds-button-group a:hover {
   text-decoration: none;
   color: #000;
-  background: #fff;
+  background: #eee;
   text-shadow: none;
 }
 
-.cds-image-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  padding: 0 10px;
-  background: rgba(255, 255, 255, 0.4);
-  color: #000;
+.cds-status .cds-status-title {
+  border-bottom: 1px solid #eee;
+}
+
+.cds-status .cds-status-container {
+  margin: 30px 0 50px 0;
+}
+
+.cds-status .cds-status-container .cds-status-section {
+  margin: 20px 0;
 }
 
 .cds-footer {
@@ -114,7 +94,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 80%;
   }
 }
 

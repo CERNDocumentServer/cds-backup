@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
-    <title>Service Maintenance</title>
+    <title>CDS</title>
     <meta charset="utf-8" />
-    <meta name="description" content="CDS unavailable services" />
+    <meta name="description" content="CDS - cds.cern.ch" />
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
@@ -28,49 +30,103 @@
       <div class="cds-logo">
         <div class="row">
           <div class="col-md-12">
-            <h1>CERN Document Server Service</h1>
+            <h1>CDS</h1>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="cds-excuse">
-            <h2><span class="cds-highlight">We'll be back soon!</span></h2>
+          <div class="cds-message">
             <p class="lead">
-              The site is undergoing maintenance for a short period.
-            </p>
-            <p class="lead">
-              Thank you for your patience.
+              We are currently experiencing a technical issue and we are
+              <br />
+              working to resolve it as quickly as possible.
             </p>
             <br />
+            <br />
+            <p class="lead">
+              For more information visit:
+            </p>
             <div class="cds-button-group">
-              <ul class="list-inline">
-                <li>
-                  <a
-                    href="//cern.service-now.com/service-portal/sls.do"
-                    target="_blank"
-                    class="btn btn-link btn-lg"
-                    rel="noreferrer"
-                  >
-                    <i class="fa fa-heartbeat"></i> Status
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="//cern.ch"
-                    target="_blank"
-                    class="btn btn-link btn-lg"
-                    rel="noreferrer"
-                  >
-                    <i class="fa fa-link"></i> cern.ch
-                  </a>
-                </li>
-              </ul>
+              <a
+                href="https://cern.service-now.com/service-portal/sls.do"
+                target="_blank"
+                class="btn btn-link btn-lg"
+                rel="noreferrer"
+              >
+                <i class="fa fa-heartbeat"></i> CERN IT services availability
+              </a>
+              <br /><br />
+              <a
+                href="https://cern.service-now.com/service-portal/function.do?name=CDS"
+                target="_blank"
+                class="btn btn-link btn-lg"
+                rel="noreferrer"
+              >
+                <i class="fa fa-medkit"></i> CERN Help desk (for any user)
+              </a>
+              <br /><br />
+              <a
+                href="https://mattermost.web.cern.ch/it-dep/channels/cds"
+                target="_blank"
+                class="btn btn-link btn-lg"
+                rel="noreferrer"
+              >
+                <i class="fa fa-comments"></i> Support chat (for CERN users)
+              </a>
             </div>
           </div>
         </div>
-        <div class="cds-footer"></div>
       </div>
+      <!-- INVISIBLE: replace the CSS class from "invisible" to "visible" to show this section blow -->
+      <div class="invisible">
+        <div class="cds-status">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <!-- BEGIN INCIDENT STATUS (hidden by default) -->
+              <div class="row">
+                <div class="col-md-12 text-center cds-status-title">
+                  <h2>Incident Status</h2>
+                </div>
+              </div>
+              <div class="cds-status-container">
+                <!-- Start Copy/Paste: block for each incident status -->
+                <div class="row cds-status-section">
+                  <div class="col-md-4 my-auto">
+                    <h4>Resolving</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="cds-status-message">
+                      We have found a solution to the issue and the service
+                      should be back soon.
+                    </div>
+                    <small>Jan 19, 2020 - 22:06 UTC+01:00</small>
+                  </div>
+                </div>
+                <!-- End Copy/Paste -->
+                <!-- Start Copy/Paste: block for each incident status -->
+                <div class="row cds-status-section">
+                  <div class="col-md-4 my-auto">
+                    <h4>Investigating</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="cds-status-message">
+                      We are investigating as issue related to the files
+                      storage.
+                    </div>
+                    <small>Jan 19, 2020 - 21:06 UTC+01:00</small>
+                  </div>
+                </div>
+              </div>
+              <!-- /INCIDENT STATUS (hidden by default) -->
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+      <!-- /INVISIBLE -->
+      <div class="cds-footer"></div>
     </div>
   </body>
   <script src="/scripts/main.js"></script>
