@@ -46,6 +46,10 @@ body {
   text-shadow: 1px 1px 5px #000;
 }
 
+.cds-message h1 {
+  text-align: center;
+}
+
 .cds-message p.lead {
   margin-top: 20px;
   margin-bottom: 0;
