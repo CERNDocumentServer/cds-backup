@@ -10,17 +10,17 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://framework.web.cern.ch/framework/2.0/fonts/PTSansWeb/PTSansWeb.css"
+      href="//framework.web.cern.ch/framework/2.0/fonts/PTSansWeb/PTSansWeb.css"
     />
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
@@ -37,24 +37,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="cds-message">
-            <!-- INCIDENT: default -->
-            <p class="lead">
-              We are currently experiencing a technical issue and we are
-              <br />
-              working to resolve it as quickly as possible.
-            </p>
-            <!-- /INCIDENT -->
-            <!-- MAINTENANCE -->
-            <!--
-            <h1>We will be back soon!</h1>
-            <p class="lead">
-              Sorry for the incovenience but we are performing scheduled
-              maintenance at the moment.
-              <br />
-              We will back online shortly!
-            </p>
-            -->
-            <!-- /MAINTENANCE -->
+
+            <div id="main"></div>
+
             <br />
             <br />
             <p class="lead">
@@ -91,53 +76,62 @@
           </div>
         </div>
       </div>
-      <!-- INVISIBLE: replace the CSS class from "d-none" to "d-block" to show this section blow -->
-      <div class="d-none cds-status">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <!-- BEGIN INCIDENT STATUS (hidden by default) -->
-            <div class="row">
-              <div class="col-md-12 text-center cds-status-title">
-                <h2>Incident Status</h2>
-              </div>
-            </div>
-            <div class="cds-status-container">
-              <!-- Start Copy/Paste: block for each incident status -->
-              <div class="row cds-status-section">
-                <div class="col-md-4 my-auto">
-                  <h4>Resolving</h4>
-                </div>
-                <div class="col-md-8">
-                  <div class="cds-status-message">
-                    We have found a solution to the issue and the service should
-                    be back soon.
-                  </div>
-                  <small>Jan 19, 2020 - 22:06 UTC+01:00</small>
-                </div>
-              </div>
-              <!-- End Copy/Paste -->
-              <!-- Start Copy/Paste: block for each incident status -->
-              <div class="row cds-status-section">
-                <div class="col-md-4 my-auto">
-                  <h4>Investigating</h4>
-                </div>
-                <div class="col-md-8">
-                  <div class="cds-status-message">
-                    We are investigating as issue related to the files storage.
-                  </div>
-                  <small>Jan 19, 2020 - 21:06 UTC+01:00</small>
-                </div>
-              </div>
-            </div>
-            <!-- /INCIDENT STATUS (hidden by default) -->
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
-      <!-- /INVISIBLE -->
+
+      <div id="statuses"></div>
+
       <div class="cds-footer"></div>
     </div>
   </body>
+
+  <script id="template-main" type="text/x-handlebars-template">
+    {{#if title}}
+    <h1>{{{title}}}</h1>
+    {{/if}}
+    {{#if description}}
+    <p class="lead">{{{description}}}</p>
+    {{/if}}
+  </script>
+
+  <script id="template-statuses" type="text/x-handlebars-template">
+    {{#if statuses}}
+    <div class="d-block cds-status">
+    {{else}}
+    <div class="d-none cds-status">
+    {{/if}}
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12 text-center cds-status-title">
+              <h2>Incident Status</h2>
+            </div>
+          </div>
+          <div class="cds-status-container">
+            {{#each statuses}}
+            <div class="row cds-status-section">
+              {{#if title}}
+              <div class="col-md-4 my-auto">
+                <h4>{{{title}}}</h4>
+              </div>
+              {{/if}}
+              <div class="col-md-8">
+                {{#if description}}
+                <div class="cds-status-message">
+                  {{{description}}}
+                </div>
+                {{/if}}
+                {{#if date}}
+                <small>{{{date}}}</small>
+                {{/if}}
+              </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
   <script src="/scripts/main.js"></script>
 </html>

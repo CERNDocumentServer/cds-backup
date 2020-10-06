@@ -1,36 +1,37 @@
 # CDS Backup
 
-Static backup site for CDS in case of maintenance and/or unexpected downtime.
+Static backup site for CDS in case of maintenance and/or unexpected downtime. It fetches a local JSON file, `status.json`, and renders its content via Handlebars templates.
 
-## Install
+## status.json format
 
-```console
-git clone https://github.com/CERNDocumentServer/cds-backup.git
-cd cds-backup
+```
+{
+  "type": "incident",
+  "incident": {
+    "title": "My title",
+    "description": "We are currently experiencing a technical issue and we are<br />working to resolve it as quickly as possible.",
+    "statuses": [
+      {
+        "title": "Title 1",
+        "description": "Description 1",
+        "date": "Date with timezone"
+      }
+    ]
+  },
+  "intervention": {
+    "title": "",
+    "description": "Sorry for the incovenience but we are performing scheduled maintenance at the moment.<br />We will back online shortly!"
+  }
+}
 ```
 
-## Development
+## Dockerfile
 
-In case you don't have `grunt-cli` installed globally:
-
-```console
-npm install -g grunt-cli
-```
-
-Run a simple webserver to show the website with autoreload on modifications:
+To test the Dockerfile, just run:
 
 ```console
-npm install
-grunt
+docker build -t backup-website-nginx .
+docker run -p 8080:80 -it backup-website-nginx
 ```
 
-## Deployment
-
-```console
-ssh <build host>
-workon cds
-cdvirtualenv scripts/
-fab backup_bootstrap
-fab backup_update
-fab backup_deploy
-```
+Open your browser http://localhost:8080
