@@ -1,0 +1,12 @@
+{
+  "type": "incident",
+  "incident": {
+    "title": "",
+    "description": "We are currently experiencing a technical issue and we are<br />working to resolve it as quickly as possible.",
+    "statuses": []
+  },
+  "intervention": {
+    "title": "",
+    "description": "Sorry for the incovenience but we are performing scheduled maintenance at the moment.<br />We will back online shortly!"
+  }
+}
