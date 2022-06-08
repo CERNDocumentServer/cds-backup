@@ -37,7 +37,7 @@ function fetchJSONFile(path, callback) {
 }
 
 function loadStatus() {
-  fetchJSONFile("status.json", function (data) {
+  fetchJSONFile("bkp-status.json", function (data) {
     var type = data["type"];
     var isIncident = type === "incident";
     var isIntervention = type === "intervention";
