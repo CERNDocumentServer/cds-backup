@@ -10,7 +10,7 @@ on:
         required: false
         default: 'Manual trigger'
   push:
-    # Publish `master` as Docker `latest` image.
+    # Publish `master` as Docker `latest` image.g
     branches:
       - master
 
